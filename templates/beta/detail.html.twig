@@ -9,7 +9,7 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello! {{ name }}✅</h1>
+    <h1>Hello! </h1>
 
     <a href="{{ path('beta') }}">Beta</a>
     <a href="{{ path('detail') }}">Detail</a>
@@ -20,19 +20,19 @@
         <table>
             <tr>
                 <td>Username:</td>
-                <td>{{ username }}</td>
+                <td>{{ data.username }}</td>
             </tr>
             <tr>
                 <td>Password:</td>
-                <td>{{ password }}</td>
+                <td>{{ data.password }}</td>
             </tr>
             <tr>
                 <td>Name:</td>
-                <td>{{ name }}</td>
+                <td>{{ data.name }}</td>
             </tr>
             <tr>
                 <td>Age:</td>
-                <td>{{ age }}</td>
+                <td>{{ data.age }}</td>
             </tr>
 
         </table>
