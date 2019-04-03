@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Obdélník{% endblock %}
+
+{% block body %}
+
+
+
+
+    <div class="jumbotron" style="background-color: #ffe4e1">
+
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Obdélník.</h2>
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td>Délka strany a</td>
+                            <td>{{ a }} cm</td>
+                        </tr>
+                        <tr>
+                            <td>Délka strany b</td>
+                            <td>{{ b }} cm </td>
+                        </tr>
+                        <tr>
+                            <td>Vzorec pro výpočet</td>
+                            <td>S = a * b</td>
+                        </tr>
+                        <tr>
+                            <td>Obsah obdélníku</td>
+                            <td>{{ obsahobdelnika }} cm&sup2;</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                    <p><a class="btn btn-outline-secondary" style="color: #000000" href="https://cs.wikipedia.org/wiki/Obd%C3%A9ln%C3%ADk" role="button">Více o obdélnících &raquo; </a></p>
+                </div>
+                <a href="{{ path('trojuhelnik') }}">Odkaz pro zájemce o trojúhelník.</a>
+                <br>
+                <a href="{{ path('pythagoras') }}">Zpátky na úvod.</a>
+            </div>
+            
+
+{% endblock %}
