@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello !{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Hello! {{ name }}✅</h1>
+
+    <a href="{{ path('beta') }}">Beta</a>
+    <a href="{{ path('detail') }}">Detail</a>
+    <a href="{{ path('pozdrav',{'pozdrav': 'Master'}) }}">Pozdrav-Master</a>
+    <a href="{{ path('pozdrav',{'pozdrav': 'Slave'}) }}">Pozdrav-Slave</a>
+
+    <div class="table">
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td>{{ username }}</td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td>{{ password }}</td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>{{ name }}</td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td>{{ age }}</td>
+            </tr>
+
+        </table>
+
+
+    </div>
+
+
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href="{{ 'src/Controller/BetaController.php'|file_link(0) }}">src/Controller/BetaController.php</a></code></li>
+        <li>Your template at <code><a href="{{ 'templates/beta/index.html.twig'|file_link(0) }}">templates/beta/index.html.twig</a></code></li>
+    </ul>
+
+</div>
+
+{% endblock %}
