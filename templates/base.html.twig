@@ -6,7 +6,12 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+    {% block navigation %}Tohle je horní blok. Vychází z base templatu. Je všude.{% endblock %}
+
+    {% block body %}THIS IS BODY{% endblock %}
+
+    {% block footer %}THIS IS FOOTER. Vyrobeno v dubnu.{% endblock %}
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
