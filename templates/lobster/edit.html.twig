@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Lobster{% endblock %}
+
+{% block body %}
+    <h1>Edit Lobster</h1>
+
+    {{ include('lobster/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('lobster_index') }}">back to list</a>
+
+    {{ include('lobster/_delete_form.html.twig') }}
+{% endblock %}

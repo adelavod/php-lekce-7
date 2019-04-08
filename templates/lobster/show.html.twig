@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lobster{% endblock %}
+
+{% block body %}
+    <h1>Lobster</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ lobster.id }}</td>
+        </tr>
+        <tr>
+            <th>Jmeno</th>
+            <td>{{ lobster.jmeno }}</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td>{{ lobster.age }}</td>
+        </tr>
+        <tr>
+            <th>Health</th>
+            <td>{{ lobster.health }}</td>
+        </tr>
+        <tr>
+            <th>Albino</th>
+            <td>{{ lobster.albino ? 'Yes' : 'No' }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('lobster_index') }}">back to list</a>
+
+    <a href="{{ path('lobster_edit', {'id': lobster.id}) }}">edit</a>
+
+    {{ include('lobster/_delete_form.html.twig') }}
+{% endblock %}

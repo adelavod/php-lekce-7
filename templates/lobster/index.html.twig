@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lobster index{% endblock %}
+
+{% block body %}
+    <h1>Lobster index</h1>
+
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Jmeno</th>
+            <th>Age</th>
+            <th>Health</th>
+            <th>Albino</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for lobster in lobsters %}
+            <tr>
+                <td>{{ lobster.id }}</td>
+                <td>{{ lobster.jmeno }}</td>
+                <td>{{ lobster.age }}</td>
+                <td>{{ lobster.health }}</td>
+                <td>{{ lobster.albino ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('lobster_show', {'id': lobster.id}) }}">show</a>
+                    <a href="{{ path('lobster_edit', {'id': lobster.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ path('lobster_new') }}">Create new</a>
+    <br>
+    <br>
+    <a href="{{ path('albino') }}">Zobrazit jen lobstery albíny.</a><br>
+    <a href="{{ path('healthy') }}">Zobrazit jen zdravé lobstery.</a>
+    <br>
+{% endblock %}

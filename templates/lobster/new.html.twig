@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Lobster{% endblock %}
+
+{% block body %}
+    <h1>Create new Lobster</h1>
+
+    {{ include('lobster/_form.html.twig') }}
+
+    <a href="{{ path('lobster_index') }}">back to list</a>
+{% endblock %}

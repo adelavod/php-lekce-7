@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lobster index{% endblock %}
+
+{% block body %}
+    <h1>Tady by měli být vypsáni jen albínští lobsteři</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Jmeno</th>
+            <th>Age</th>
+            <th>Health</th>
+            <th>Albino</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for lobster in lobsters %}
+            <tr>
+                <td>{{ lobster.id }}</td>
+                <td>{{ lobster.jmeno }}</td>
+                <td>{{ lobster.age }}</td>
+                <td>{{ lobster.health }}</td>
+                <td>{{ lobster.albino ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('lobster_show', {'id': lobster.id}) }}">show</a>
+                    <a href="{{ path('lobster_edit', {'id': lobster.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('lobster_new') }}">Create new</a>
+{% endblock %}
