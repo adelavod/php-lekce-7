@@ -19,16 +19,15 @@ class TRESTController extends AbstractController
     }
 
     /**
-     * @Route("/trest", name="trest")
+     * @Route("/trest/liszt", name="trest_liszt")
      */
     public function liszt(ProgrammingLanguageRepository $programmingLanguageRepository)
     {
-        return $this->render('trest/index.html.twig', [
+        return $this->render('trest/liszt.html.twig', [
             'controller_name' => 'TRESTController',
+            'languages'=> $programmingLanguageRepository->findAll()
         ]);
     }
-
-    //nedodělané, ale nevadí, doma!
 
     /**
      * @Route("/trest/known", name="trest_known")
@@ -36,7 +35,7 @@ class TRESTController extends AbstractController
     public function known(ProgrammingLanguageRepository $programmingLanguageRepository)
     {
 
-        return $this->render('trest/index.html.twig', [
+        return $this->render('trest/known.html.twig', [
             'controller_name' => 'TRESTController',
             'languages' => $programmingLanguageRepository->findKnown()
         ]);

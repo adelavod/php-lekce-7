@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <h1>A nyní si zobrazíme známé jazyky.</h1>
+    <a href="{{ path('trest_liszt') }}">Zobrazte si všechny jazyky!</a>
+
+    <table>
+        <tbody>
+        {% for language in languages %}
+        <tr>
+            <td>{{ language.testString }}</td>
+            <td>{% if language.testBoolean %}ano{% else %}ne{% endif %}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+
+    </table>
+{% endblock %}

@@ -46,9 +46,9 @@ class BetaController extends AbstractController
 
     public function list()
     {
-      //  $handle = @fopen('znamky.txt', 'r');
-      //  $text = fread($handle, 5000);
-      //  echo $text;
+     $handle = @fopen('znamky.txt', 'r');
+      $text = fread($handle, 5000);
+       echo $text;
 
         return $this->render('beta/list.html.twig',
             ['trida'  => [
