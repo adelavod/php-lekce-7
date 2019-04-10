@@ -1,20 +1,16 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Domácí úkol z lekce 8.{% endblock %}
-
-{% block navigation %}{% endblock %}
+{% extends 'book_listing/index.html.twig' %}
 
 
 {% block body %}
-    <h1>Databáze knih</h1>
+    <h1>Book index</h1>
 
     <table class="table">
         <thead>
         <tr>
             <th>Id</th>
-            <th>Počet stran</th>
+            <th>PocetStran</th>
             <th>Autor</th>
-            <th>Rok vydání</th>
+            <th>RokVydani</th>
             <th>Cena</th>
             <th>actions</th>
         </tr>

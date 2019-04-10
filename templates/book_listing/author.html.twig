@@ -1,0 +1,42 @@
+{% extends 'book_listing/index.html.twig' %}
+
+
+{% block body %}
+    <div class="container">
+    <h1>Autoři</h1>
+
+    {% set author = "" %}
+    {% for book in books %}
+        {% if author != book.autor %}
+            <h2>{{ book.autor }}</h2>
+        {% endif %}
+        <table class="table table-sm">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>PocetStran</th>
+                <th>RokVydani</th>
+                <th>Cena</th>
+                <th>actions</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr>
+                <td>{{ book.Id }}</td>
+                <td>{{ book.pocetStran }}</td>
+                <td>{{ book.rokVydani }}</td>
+                <td>{{ book.cena }}</td>
+                <td><a href="{{ path('book_show', {'id': book.id}) }}">show</a>
+                    <a href="{{ path('book_edit', {'id': book.id}) }}">edit</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        {% set author = book.autor %}
+    {% endfor %}
+    </div>
+    <hr>
+
+    <a href="{{ path('book_new') }}">Create new</a>
+{% endblock %}

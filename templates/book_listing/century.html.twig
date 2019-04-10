@@ -1,0 +1,115 @@
+{% extends 'book_listing/index.html.twig' %}
+
+
+{% block body %}
+    <h1>Knihy vydané do roku 1900</h1>
+
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>PocetStran</th>
+            <th>Autor</th>
+            <th>RokVydani</th>
+            <th>Cena</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            {% if book.rokVydani <= 1900 %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.PocetStran }}</td>
+                <td>{{ book.Autor }}</td>
+                <td>{{ book.RokVydani }}</td>
+                <td>{{ book.Cena }}</td>
+                <td>
+                    <a href="{{ path('book_show', {'id': book.id}) }}">show</a>
+                    <a href="{{ path('book_edit', {'id': book.id}) }}">edit</a>
+                </td>
+            </tr>
+            {% endif %}
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Knihy vydané v letech 1901 - 2000</h1>
+
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>PocetStran</th>
+            <th>Autor</th>
+            <th>RokVydani</th>
+            <th>Cena</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            {% if book.rokVydani > 1900 and book.rokVydani < 2000%}
+                <tr>
+                    <td>{{ book.id }}</td>
+                    <td>{{ book.PocetStran }}</td>
+                    <td>{{ book.Autor }}</td>
+                    <td>{{ book.RokVydani }}</td>
+                    <td>{{ book.Cena }}</td>
+                    <td>
+                        <a href="{{ path('book_show', {'id': book.id}) }}">show</a>
+                        <a href="{{ path('book_edit', {'id': book.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% endif %}
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Knihy vydané po roce 2000</h1>
+
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>PocetStran</th>
+            <th>Autor</th>
+            <th>RokVydani</th>
+            <th>Cena</th>
+            <th>actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for book in books %}
+            {% if book.rokVydani > 2000 %}
+                <tr>
+                    <td>{{ book.id }}</td>
+                    <td>{{ book.PocetStran }}</td>
+                    <td>{{ book.Autor }}</td>
+                    <td>{{ book.RokVydani }}</td>
+                    <td>{{ book.Cena }}</td>
+                    <td>
+                        <a href="{{ path('book_show', {'id': book.id}) }}">show</a>
+                        <a href="{{ path('book_edit', {'id': book.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% endif %}
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <a href="{{ path('book_new') }}">Create new</a>
+{% endblock %}
