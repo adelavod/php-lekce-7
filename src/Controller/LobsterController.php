@@ -25,6 +25,15 @@ class LobsterController extends AbstractController
     }
 
     /**
+     * @Route("/grouped", name="grouped", methods="GET")
+     */
+    public function grouped(LobsterRepository $lobsterRepository)
+    {
+        return $this->render('lobster/grouped.html.twig',
+            ['lobsters' => $lobsterRepository->findAll()]);
+    }
+
+    /**
      * @Route("/albino", name="albino")
      */
     public function albino(LobsterRepository $lobsterRepository)
